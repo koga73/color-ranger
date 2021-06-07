@@ -44,7 +44,7 @@ class ColorRanger {
 
 			//Move into range
 			const range = valueHigh - valueLow;
-			const valInRange = value + range + valueLow;
+			const valInRange = value - valueLow;
 			const valPercent = (valInRange / range).toFixed(2);
 
 			//Determine color!

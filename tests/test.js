@@ -6,7 +6,7 @@ const expect = require("chai").expect;
 
 const ColorRanger = require("../ColorRanger.js");
 
-describe("--- HEX ---\n", function () {
+describe("--- HEX DEFAULT ---\n", function () {
 	const ranger = new ColorRanger();
 
 	it("COLOR LOW: -1", function () {
@@ -23,5 +23,22 @@ describe("--- HEX ---\n", function () {
 	});
 	it("COLOR HIGH: 1", function () {
 		expect(ranger.computeHexFromValue(1)).equal("#ff0000");
+	});
+});
+
+describe("--- HEX MODIFIED ---\n", function () {
+	const ranger = new ColorRanger({
+		valueHigh: 200,
+		valueLow: 0
+	});
+
+	it("COLOR LOW: 0", function () {
+		expect(ranger.computeHexFromValue(0)).equal("#0000ff");
+	});
+	it("COLOR MID: 100", function () {
+		expect(ranger.computeHexFromValue(100)).equal("#ffffff");
+	});
+	it("COLOR HIGH: 200", function () {
+		expect(ranger.computeHexFromValue(200)).equal("#ff0000");
 	});
 });

@@ -1,6 +1,6 @@
 {
 	"name": "@koga73/color-ranger",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Ranges a color between values",
 	"main": "ColorRanger.js",
 	"scripts": {
